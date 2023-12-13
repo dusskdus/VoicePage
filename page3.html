@@ -7,24 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>서비스 이용하기</h1>
-    </header>
     <nav>
         <ul>
             <li><a href="page1.html">Who's Voice</a></li>
-            <li><a href="page2.html">서비스 소개</a></li>
+            <!--<li><a href="page2.html">서비스 소개</a></li>-->
             <li><a href="page3.html">이용하기</a></li>
         </ul>
     </nav>
     <main>
         <section>
-            <h2>Page 3 Content</h2>
-            <p>This is the content of Page 3.</p>
+            <h1 style="font-size: 50px;">서비스 이용하기</h1>
+            <p>음성 파일을 마우스로 드래그하거나 파일을 업로드 해주세요</p>
+            <img src = "c:\Users\82105\Downloads\download.png" alt="upload" width="200" height="180" >
         </section>
+        <body>
+            <form action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
+                <input type="text" name="id">
+                <input type="file" name="profile">
+                <input type="submit">
+            </form>
+        </body>
+    
     </main>
-    <footer>
-        <p>&copy; 2023 Your Website. All rights reserved.</p>
-    </footer>
+    
 </body>
 </html>
