@@ -4,24 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who's Voice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400&display=swap" rel="stylesheet">
+    <style> * {font-family: 'Noto Sans KR', sans-serif;}
+    </style>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<style>
+    * {
+               font-family: 'Noto Sans KR', sans-serif;
+           }
+   
+           body {
+               font-size: 20px;
+           }
+   
+           .number_01 {
+               line-height: 500%;
+           }
+   
+           body, html {
+               height: 100%;
+               margin: 0;
+               display: flex;
+               flex-direction: column;
+           }
+   
+           main {
+               flex: 1;
+           }
+   
+           section {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               text-align: center;
+               padding: 20px;
+           }
+   
+           #contents {
+               margin-top: auto;
+               text-align: center;
+           }
+   
+           #adress {
+               text-align: left;
+               margin-bottom: 20px;
+           }
+   
+           #adress p {
+               margin: 0;
+           }
+   </style>
+
 <body>
     <nav>
         <ul>
             <li><a href="page1.html">Who's Voice</a></li>
-            <li><a href="page2.html">서비스 소개</a></li>
+            <!--<li><a href="page2.html">서비스 소개</a></li>-->
             <li><a href="page3.html">이용하기</a></li>
         </ul>
     </nav>
     <main>
         <section>
-            <h2>Page 2 Content</h2>
-            <p>This is the content of Page 2.</p>
+            <h1 style="font-size: 50px;">서비스 이용하기</h1>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label for="audio_file">음성 파일 업로드: </label>
+                <input type="file" name="audio_file" id="audio_file" accept=".wav">
+                <input type="submit" value="Upload">
+            </form>
+
+            {% if result %}
+            <p>결과: {{ result }}</p>
+            {% endif %}
         </section>
+
     </main>
-    <footer>
-        <p>&copy; 2023 Your Website. All rights reserved.</p>
-    </footer>
+    <div class="drag-area" ondrop="upload_file(event)" ondragover="return false">
+        <label for="input-file" id="drop-area">
+            <input type="file" accept="file/*" id="input-file" hidden>
+            <div class="icon"><i class="fas fa-cloud-upload-alt"></i>
+                <img src="upload.png">
+                <header>음성 파일을 마우스로 드래그하거나<br> 이곳을 클릭하여 업로드 해주세요</header>
+                <button hidden> </button>
+            </div>
+            <input type="file" name="file" id="file" hidden>
+        </label>
+    </div>
+    <script src="script.js"></script>
+
 </body>
+<div id='wrapper'> </div>
+<footer><p><strong class="title">이메일</strong> <br>
+      <span class="email">p0tlsi@duksung.ac.kr <br> skdusb0007@duksung.ac.kr <br> 20210808@duksung.ac.kr <br> @duksung.ac.kr</span>
+  </p>    
+
+  <p><strong class="pongle">퐁글</strong><br>
+      <span class="location">서울특별시 도봉구 삼양로 144길 33</span></p>
+</footer>
+
 </html>

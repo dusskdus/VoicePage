@@ -7,6 +7,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    height: 100%;
 }
 
 header, nav, main, footer {
@@ -86,13 +87,52 @@ a{
 
 #contents a{
     display: inline-block;
-    border: 2px solid white;
     border-radius: 20px;
-    padding: 95px 105px;
-    font-size: 17px;
-    font-weight: bold;
+    padding: 65px 95px;
+    font-size: 25px;
+    font-weight: medium;
     vertical-align: top;
     margin-right: 30px;
     background: linear-gradient(to bottom, #F5FEE6, #88CBF2);
     color: black;
+    
 }
+
+#wrapper{
+    height : auto;
+    min-height: 50%;
+}
+footer{
+    position : relative;
+    transform : translateY(-100%);
+    background-color: #1B201E;
+    text-align: left;
+    font-size: 13px;
+    color: #848385;
+}
+
+.drag-area{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(#1B201E);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#drop-area{
+    width: 650px;
+    height: 400px;
+    padding: 30px;
+    background: #2E322E;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+.drag-area header{
+  font-size: 20px;
+  font-weight: 500;
+  background: #2E322E;
+  color: #fff;
+}
+
